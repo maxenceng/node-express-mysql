@@ -18,11 +18,11 @@ Then, you need to initialize the project.
 npm run init
 ```
 
-You can now start the server with the command :
+You can start the server with the command :
 ```
 gulp
 ```
 
-You can now see your server running on the port [8000](http://localhost:8000/).
+The server is now running on the port [8000](http://localhost:8000/).
 
 
