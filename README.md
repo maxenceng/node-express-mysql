@@ -23,5 +23,6 @@ You can now start the server with the command :
 gulp
 ```
 
+You can now see your server running on the port [8000](http://localhost:8000/).
 
 
