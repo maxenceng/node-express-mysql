@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    Values:
+    <div class="message">
+    </div>
+  </body>
+  <script src="/js/jquery.min.js"></script>
+  <script>
+    $.getJSON("/api", function(json) {
+      let htmlOut=''
+      json.forEach((e) => {
+        htmlOut += '<div class="title">'
+        htmlOut += e.title
+        htmlOut += '</div>'
+        htmlOut += '<div class="text">'
+        htmlOut += e.text
+        htmlOut += '<form method="POST" action="/api/'
+        htmlOut += e.id
+        htmlOut += '?_method=DELETE">'
+        htmlOut += '<button type="submit">x</button>'
+      })
+      $(".message").html(htmlOut)
+    })
+  </script>
+</html>

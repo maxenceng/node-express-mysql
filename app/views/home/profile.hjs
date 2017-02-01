@@ -1,0 +1,38 @@
+{{> header}}
+  <body>
+    {{> nav}}
+
+    <div class="container">
+      <h1>Welcome to the MERN Boilerplate !</h1>
+      <p>You are now on your profile page</p>
+
+      <p>Change password:</p>
+      {{#error}}
+        <div class="alert alert-danger" role="alert">
+          <span class="sr-only">Error:</span>
+          ERROR
+        </div>
+      {{/error}}
+      <form  action="/profile" method="post">
+        <div class="form-group text-center">
+          <label for="current_password">Current Password:</label>
+          <input id="current_password" type="password" name="current" class="form-control" autocomplete="off" required>
+        </div>
+        <div class="form-group text-center">
+          <label for="new_password">New Password:</label>
+          <input id="new_password" type="password" name="new" class="form-control" autocomplete="off" required>
+        </div>
+
+        <div class="form-group text-center">
+          <label for="new_password2">New Password:</label>
+          <input id="new_password2" type="password" name="new2" class="form-control" autocomplete="off" required>
+        </div>
+
+        <div class="text-center">
+          <input class="btn btn-primary" type="submit" value="Save">
+        </div>
+
+      </form>
+    </div>
+  </body>
+{{> footer}}

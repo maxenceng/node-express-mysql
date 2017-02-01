@@ -1,0 +1,26 @@
+{{> header}}
+  <body>
+    {{> nav}}
+
+    <div class="container">
+      {{#error}}
+        <div class="alert alert-danger" role="alert">
+          <span class="sr-only">Error:</span>
+          Enter a valid email address
+        </div>
+      {{/error}}
+      <form action="/forgot" method="post">
+
+        <div class="form-group text-center">
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="text-center">
+          <input class="btn btn-primary" type="submit" value="Send Email">
+        </div>
+
+      </form>
+    </div>
+  </body>
+{{> footer}}

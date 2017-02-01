@@ -1,0 +1,39 @@
+{
+  "name": "ExpressSQL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp knex && mocha",
+    "start": "node server.js",
+    "init": "yarn && gulp init"
+  },
+  "keywords": [],
+  "author": "maxenceng",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.16.0",
+    "connect-redis": "^3.2.0",
+    "express": "^4.14.1",
+    "express-mailer": "^0.3.1",
+    "express-session": "^1.15.0",
+    "hjs": "^0.0.6",
+    "knex": "^0.12.6",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5",
+    "validator": "^6.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "mocha": "^3.2.0"
+  }
+}
