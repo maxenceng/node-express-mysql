@@ -12,6 +12,7 @@ Redis is used as a store for sessions.
 #### How to use this:
 
 You have to first add your MySQL password in the file called **knexfile.js**.
+If you want to use the mailing system, you need to add your gmail credentials in the file called **mailfile.js**.
 
 Then, you need to initialize the project.
 ```

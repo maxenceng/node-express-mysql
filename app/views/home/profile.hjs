@@ -3,7 +3,7 @@
     {{> nav}}
 
     <div class="container">
-      <h1>Welcome to the MERN Boilerplate !</h1>
+      <h1>Welcome to the NodeJS ExpressJS MySQL Boilerplate !</h1>
       <p>You are now on your profile page</p>
 
       <p>Change password:</p>

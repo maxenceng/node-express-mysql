@@ -1,0 +1,5 @@
+const YOUR_NAME = ''
+const YOUR_GMAIL_ADRESS = ''
+const YOUR_GMAIL_PASSWORD = ''
+
+module.exports = { YOUR_NAME, YOUR_GMAIL_ADRESS, YOUR_GMAIL_PASSWORD }

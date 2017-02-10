@@ -3,23 +3,18 @@
  *************************************************************/
 
 const db = require('../configs/DatabaseConfig')
+const Post = require('../models/Post')
 
 /**************************************************************
  * CONTROLLERS
  *************************************************************/
 
 function getAll(req, res, next) {
-    db('posts').then((posts) => {
-        res.send(posts)
-    }, next)
+    Post.readAll(res, next)
 }
 
 function post(req, res, next) {
-    db('posts')
-        .insert(req.body)
-        .then((postIds) => {
-            res.json({message: "Success!", post: req.body})
-        }, next)
+    Post.save(req.body, res, next)
 }
 
 function getId(req, res, next) {
@@ -28,15 +23,7 @@ function getId(req, res, next) {
         error: "This ID is not in the database",
         bodyReq: id
     }
-    db('posts')
-        .where('id', id)
-        .first()
-        .then((posts) => {
-            if(!posts) {
-                return res.status(400).json(errReq)
-            }
-            res.json(posts)
-        }, next)
+    Post.readOne(id, errReq, res, next)
 }
 
 function put(req, res, next) {
@@ -45,17 +32,7 @@ function put(req, res, next) {
         reqId: id,
         bodyReq: req.body
     }
-    db('posts')
-        .where('id', id)
-        .update(req.body)
-        .then((result) => {
-            if(result === 0) {
-                const failed = "Post not updated!"
-                return res.status(400).json({message: failed, data: data})
-            }
-            const success = "Post updated!"
-            return res.status(200).json({message: success, data: data})
-        }, next)
+    Post.update(id, req.body, data, res, next)
 }
 
 function del(req, res, next) {
@@ -63,17 +40,7 @@ function del(req, res, next) {
     const data = {
         reqId: id
     }
-    db('posts')
-        .where('id', id)
-        .delete()
-        .then((result) => {
-            if(result === 0) {
-                const failed = "Post not deleted!"
-                return res.status(400).json({message: failed, data: data})
-            }
-            const success = "Post deleted!"
-            return res.status(200).json({message: success, data: data})
-        }, next)
+    Post.remove(id, data, res, next)
 }
 
 /**************************************************************
