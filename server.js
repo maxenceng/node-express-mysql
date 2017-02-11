@@ -20,12 +20,12 @@ require('./app/configs/PassportConfig')
  * ROUTES INIT
  *************************************************************/
 
-const UserRoutes = require('./app/routes/UserRoute')
-const ProfileRoutes = require('./app/routes/ProfileRoute')
-const PostRoutes = require('./app/routes/PostRoute')
-const AppRoutes = require('./app/routes/AppRoute')
-const StaticRoutes = require('./app/routes/StaticRoute')
-const ErrorsRoutes = require('./app/routes/ErrorsRoute')
+const UserRoute = require('./app/routes/UserRoute')
+const ProfileRoute = require('./app/routes/ProfileRoute')
+const PostRoute = require('./app/routes/PostRoute')
+const AppRoute = require('./app/routes/AppRoute')
+const StaticRoute = require('./app/routes/StaticRoute')
+const ErrorsRoute = require('./app/routes/ErrorsRoute')
 
 
 /**************************************************************
@@ -50,12 +50,12 @@ app.use(passport.session())
 /**************************************************************
  * ROUTING
  *************************************************************/
-app.use(UserRoutes)
-app.use(ProfileRoutes)
-app.use(PostRoutes)
-app.use(AppRoutes)
-app.use(StaticRoutes)
-app.use(ErrorsRoutes)
+app.use(UserRoute)
+app.use(ProfileRoute)
+app.use(PostRoute)
+app.use(AppRoute)
+app.use(StaticRoute)
+app.use(ErrorsRoute)
 
 
 /**************************************************************
